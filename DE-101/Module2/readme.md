@@ -3,7 +3,7 @@
 ## Модель данных
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/data_model_superstore.jpg)
 
-profuct_id, к сожалению, [не уникальный](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/product_id%20%D0%BD%D0%B5%20%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9.jpg). 
+product_id, к сожалению, [не уникальный](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/product_id%20%D0%BD%D0%B5%20%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9.jpg). 
 Поэтому сгенерировал отдельный айдишник. Для менеджеров тоже взял суррогатный, фамилия может меняться.
 
 ## Запросы для создания таблиц
