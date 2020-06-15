@@ -1,0 +1,6 @@
+select * from facts f 
+join dim_customers c on c.customer_id =f.customer_id 
+join dim_products p on p.prod_id =f.prod_id
+join dim_orders o on o.order_id =f.order_id 
+join dim_dates d on d.order_date =f.order_date 
+join dim_managers m on m.manager_id =f.manager_id 

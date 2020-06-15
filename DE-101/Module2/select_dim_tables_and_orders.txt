@@ -1,0 +1,30 @@
+select
+sales,
+quantity,
+discount,
+profit,
+c.customer_id, 
+c.customer_name,
+c.segment,
+d.order_date,
+m.manager_id, 
+m.person,
+m.region,
+p.prod_id,
+p.product_id,
+p.product_name,
+p.category,
+p.sub_category,
+ord.order_id,
+ord.ship_mode,
+ord.ship_date,
+ord.country,
+ord.state,
+ord.city,
+ord.postal_code,
+ord.returned 
+from orders o inner join dim_customers c on o.customer_id = c.customer_id
+join dim_dates d on o.order_date = d.order_date
+join dim_managers m on o.region = m.region
+join dim_products p on o.product_id = p.product_id
+join dim_orders ord on o.order_id = ord.order_id
