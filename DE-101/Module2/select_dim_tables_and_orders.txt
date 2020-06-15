@@ -26,5 +26,5 @@ ord.returned
 from orders o inner join dim_customers c on o.customer_id = c.customer_id
 join dim_dates d on o.order_date = d.order_date
 join dim_managers m on o.region = m.region
-join dim_products p on o.product_id = p.product_id
+join dim_products p on o.product_id = p.product_id and p.product_name= o.product_name 
 join dim_orders ord on o.order_id = ord.order_id
