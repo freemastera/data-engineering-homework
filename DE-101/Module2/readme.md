@@ -26,10 +26,10 @@ dm_insert_fact_tables.txt -вставка данных в таблицу фак�
 
 select_dim_tables_and_orders.txt - SELECT  метрик из таблицы orders, а измерений из dim таблиц<br>
  
-![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dim_tables_and_orders.jpg)
+![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dimtables_and_orders.jpg)
  <br><br>
  
 SELECT метрик из таблицы фактов, а измерений из dim таблиц<br>
 
-![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dim_tables_and_facts.jpg)
+![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dimtables_and_facts.jpg)
 
