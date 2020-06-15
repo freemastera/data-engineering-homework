@@ -7,27 +7,29 @@ profuct_id, к сожалению, [не уникальный](https://github.co
 Поэтому сгенерировал отдельный айдишник. Для менеджеров тоже взял суррогатный, фамилия может меняться.
 
 ## Запросы для создания таблиц
+
 <ol>
 <li>Оригинальные денормализованные:<br><br>
-[orders](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/orders.sql)<br>
-[people](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/people.sql)<br>
-[returns](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/returns.sql)<br>
+orders.sql<br>
+people.sql<br>
+returns.sql<br>
  </li>
 <br><br>
 <li>Нормализованные по схеме "Звезда":<br><br>
- [Создание таблиц](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/dm_create_tables.txt)<br>
- [Вставка данных в таблицы измерений](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/dm_insert_dim_tables.txt)<br>
-   [Вставка данных в таблицу фактов](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/dm_insert_fact_tables.txt)<br><br>
+dm_create_tables.txt -создание таблиц<br>
+dm_insert_dim_tables.txt - вставка данных в таблицы измерений<br>
+dm_insert_fact_tables.txt -вставка данных в таблицу фактов]<br><br>
     
   </li>
 
 ## SELECT запросы для проверки
-<ol>
-<li>
-[SELECT метрик из таблицы order и измерений из dim таблиц](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/select_dim_tables_and_orders.txt)</li><br>
+
+select_dim_tables_and_orders.txt - SELECT  метрик из таблицы orders, а измерений из dim таблиц<br>
+ 
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dim_tables_and_orders.jpg)
  <br><br>
-<li>[SELECT метрик из таблицы фактов и измерений из dim таблиц](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/dm_select_dim_tables_and_facts.txt)</li><br>
+ 
+SELECT метрик из таблицы фактов, а измерений из dim таблиц<br>
 
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dim_tables_and_facts.jpg)
 
