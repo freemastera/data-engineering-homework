@@ -79,7 +79,6 @@ join dim_dates d on d.order_date =f.order_date  <br>
 join dim_customers c on c.customer_id =f.customer_id <br>
 group by c.segment,year,month <br>
 order by year DESC,month DESC,segment  <br>
- 
 <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/7.png)
  <br><br>
@@ -90,8 +89,17 @@ join dim_dates d on d.order_date =f.order_date  <br>
 join dim_products p on p.prod_id =f.prod_id <br>
 group by p.category,year,month <br>
 order by year DESC,month DESC,p.category  <br>
-
 <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/8.png)
  <br><br>
    
+### Product Dashboard (Продуктовые метрики)
+#### Sales by Product Category over time (Продажи по категориям) <br>
+select d.order_date as month,sum(f.sales),p.category from facts f<br>
+join dim_dates d on d.order_date =f.order_date <br>
+join dim_products p on p.prod_id =f.prod_id<br>
+group by p.category,d.order_date<br>
+order by d.order_date DESC,p.category<br>
+  <br>
+  ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/9.png)
+ <br><br>
