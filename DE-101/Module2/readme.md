@@ -36,15 +36,12 @@ SELECT метрик из таблицы фактов, а измерений из
 ## Запросы в sql, чтобы ответить на вопросы из модуля 01
 https://github.com/Data-Learn/data-engineering/tree/master/DE-101/Module-01/Lab#%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2-excel
 
-<ol>
- <li>Overview (обзор ключевых метрик)</li>
- <ol>
- <li>
+
+ 1. Overview (обзор ключевых метрик)
+
   Total Sales <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/1.png)
  <br><br>
-  </li>
+
  
- 
- </ol>
- </ol>
+
