@@ -53,23 +53,23 @@ select ROUND(sum(profit)/sum(sales),2) from facts
   <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/3.png)
  <br><br>
-   #### Profit per Order <br>
-  select ROUND(sum(f.profit) / count(o.order_id),0) from facts f<br>
+  
+  #### Profit per Order <br>
+select ROUND(sum(f.profit) / count(o.order_id),0) from facts f<br>
 join dim_orders o on o.order_id =f.order_id 
- 
-  <br>
+<br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/4.png)
  <br><br>
+ 
    #### Sales per Customer <br>
 select ROUND(sum(f.sales) / count(c.customer_id),0) from facts f <br>
 join dim_customers c on c.customer_id =f.customer_id  
- 
-  <br>
+<br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/5.png)
  <br><br>
   #### Avg. Discount <br>
  select ROUND(avg(discount),2) from facts 
-  <br>
+<br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/6.png)
  <br><br>
  
@@ -80,7 +80,7 @@ join dim_customers c on c.customer_id =f.customer_id <br>
 group by c.segment,year,month <br>
 order by year DESC,month DESC,segment  <br>
  
-  <br>
+<br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/7.png)
  <br><br>
 
@@ -91,8 +91,7 @@ join dim_products p on p.prod_id =f.prod_id <br>
 group by p.category,year,month <br>
 order by year DESC,month DESC,p.category  <br>
 
-  <br>
+<br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/8.png)
  <br><br>
- 
    
