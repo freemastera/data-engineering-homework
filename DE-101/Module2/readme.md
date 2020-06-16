@@ -37,10 +37,16 @@ SELECT метрик из таблицы фактов, а измерений из
 https://github.com/Data-Learn/data-engineering/tree/master/DE-101/Module-01/Lab#%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2-excel
 
 
- 1. Overview (обзор ключевых метрик)
+ ### Overview (обзор ключевых метрик)
 
-  Total Sales <br>
+  #### Total Sales <br>
+  select round(sum(sales),0) from facts f 
+  <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/1.png)
+ <br><br>
+  #### Total Profit <br>
+  select round(sum(profit),0) from facts <br>
+  ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/2.png)
  <br><br>
 
  
