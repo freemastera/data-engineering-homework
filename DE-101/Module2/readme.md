@@ -33,8 +33,8 @@ SELECT метрик из таблицы фактов, а измерений из
 
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/select_dimtables_and_facts.jpg)
 
-## Запросы в sql, чтобы ответить на вопросы из модуля 01
-https://github.com/Data-Learn/data-engineering/tree/master/DE-101/Module-01/Lab#%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2-excel
+## Запросы в sql, чтобы ответить на вопросы из [модуля 01](https://github.com/Data-Learn/data-engineering/tree/master/DE-101/Module-01/Lab#%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2-excel)
+
 
 
  ### Overview (обзор ключевых метрик)
@@ -102,4 +102,25 @@ group by p.category,d.order_date<br>
 order by d.order_date DESC,p.category<br>
   <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/9.png)
+ <br><br>
+
+### Customer Analysis
+#### Sales and Profit by Customer <br>
+select sum(f.sales) as sales,sum(f.profit) as profit,c.segment from facts f<br>
+join dim_customers c on c.customer_id =f.customer_id<br>
+group by c.segment<br>
+order by segment <br>
+  <br>
+  ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/10.png)
+ <br><br>
+ #### Customer Ranking <br>
+??? Нужна формула
+ <br><br>
+ #### Sales per region <br>
+select m.region, sum(f.sales) as sales from facts f<br>
+join dim_managers m on m.manager_id =f.manager_id<br>
+group by region<br>
+order by sales DESC<br>
+  <br>
+  ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/11.png)
  <br><br>
