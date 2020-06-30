@@ -124,3 +124,24 @@ order by sales DESC<br>
   <br>
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/11.png)
  <br><br>
+ 
+ ## Зарегестрировался в Amazon Web Services(AWS) и добавил данные в базу данных в облако<br>
+ ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/aws_db.jpg)
+ <br><br>
+ 
+  ## Подключился к базе данных в облаке из Data Sudio и создал визуализацию<br>
+  
+ С датой в поле order_date возникли проблемы. Data studio путал месяц и день, поэтому в запросе создал новое поле FormattedDate с преобразованным форматом даты.
+ 
+ `
+select *,to_char(f.order_date, 'YYYY-MM-DD') AS FormattedDate from facts f 
+join dim_dates d on d.order_date =f.order_date 
+join dim_customers c on c.customer_id =f.customer_id 
+join dim_products p on p.prod_id =f.prod_id
+join dim_orders o on o.order_id =f.order_id 
+join dim_managers m on m.manager_id =f.manager_id `
+
+<br><br>
+Ссылка на отчет в Data Studio
+<br>
+https://datastudio.google.com/reporting/f31df262-28da-46e6-bf50-068a8fd3589c
