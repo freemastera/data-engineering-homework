@@ -18,7 +18,7 @@ stg.returns.sql<br>
 <li>Нормализованные по схеме "Звезда":<br><br>
 dw_create_tables.sql -создание таблиц<br>
 dw_insert_dimensions.sql - вставка данных в таблицы измерений<br>
-dw_insert_facts.sql -вставка данных в таблицу фактов]<br><br>
+dw_insert_facts.sql -вставка данных в таблицу фактов<br><br>
     
   </li>
 
@@ -29,10 +29,10 @@ dw_insert_facts.sql -вставка данных в таблицу фактов]
 
 ```sql
 select
-sales,
-quantity,
-discount,
-profit,
+o.sales,
+o.quantity,
+o.discount,
+o.profit,
 c.customer_id, 
 c.customer_name,
 c.segment,
@@ -57,14 +57,16 @@ from stg.orders o inner join dw.dim_customers c on o.customer_id = c.customer_id
 join dw.dim_dates d on o.order_date = d.order_date
 join dw.dim_managers m on o.region = m.region
 join dw.dim_products p on o.product_id = p.product_id and p.product_name= o.product_name 
-join dw.dim_orders ord on o.order_id = ord.order_id```
+join dw.dim_orders ord on o.order_id = ord.order_id
+```
 
 
  
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/1.jpg)
  <br><br>
  
-Выводим все записи из нормализованных таблиц<br>
+Выводим все записи из нормализованных таблиц
+<br>
 
 ```sql
 select * from dw.facts f 
@@ -74,18 +76,21 @@ join dw.dim_orders o on o.order_id =f.order_id
 join dw.dim_dates d on d.order_date =f.order_date 
 join dw.dim_managers m on m.manager_id =f.manager_id 
 ```
-
+<br>
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/2.jpg)
 <br><br>
-Получаем 9993, хотя в примере выше 9994. И в экселе тоже 9994(без строки с заголовками). Почему так? Дело в том что в исходном файле есть один дубль строки.
-Если мы выполним предудущий запрос добавив DISTINCT, то тоже получим 9993.
+Получаем 9993, хотя в примере выше 9994. И в экселе тоже 9994(без строки с заголовками). Почему так? Дело в том что, в исходном файле, есть один дубль строки.
+Если мы выполним предыдущий запрос, добавив DISTINCT, то тоже получим 9993.
 В экселе, если удалить столбец с суррогатным id (первый столбец Row ID), а затем удалить дубликаты, то также будет 9993 строк.
 
 
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/3.jpg)
 <br><br>
 Поэтому мой расчеты могут немного отличаться от расчетов других пользователей.
-В первом модуле я также поправил дашборд с ДЗ, удалив лишнюю строку. Соотвественно данные пересчитались и стали немного отличаться от оригинала  https://github.com/Data-Learn/data-engineering/blob/master/DE-101/Module-01/Lab/Sample%20-%20Superstore%20-%20Dashboard.xlsx
+В первом модуле я также поправил дашборд с ДЗ, удалив лишнюю строку. Соотвественно данные пересчитались и стали немного отличаться от
+[оригинала](https://github.com/Data-Learn/data-engineering/blob/master/DE-101/Module-01/Lab/Sample%20-%20Superstore%20-%20Dashboard.xlsx)
+
+
 
 
 ## Ниже будут запросы в sql, чтобы ответить на вопросы из [модуля 01](https://github.com/Data-Learn/data-engineering/tree/master/DE-101/Module-01/Lab#%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2-excel)
@@ -98,7 +103,7 @@ join dw.dim_managers m on m.manager_id =f.manager_id
 ```sql
 select round(sum(sales),0) from dw.facts f
 ```
-  <br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/1.jpg)
  <br><br>
   #### Total Profit <br>
