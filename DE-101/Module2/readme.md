@@ -76,7 +76,7 @@ join dw.dim_orders o on o.order_id =f.order_id
 join dw.dim_dates d on d.order_date =f.order_date 
 join dw.dim_managers m on m.manager_id =f.manager_id 
 ```
-<br>
+
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/2.jpg)
 <br><br>
 Получаем 9993, хотя в примере выше 9994. И в экселе тоже 9994(без строки с заголовками). Почему так? Дело в том что, в исходном файле, есть один дубль строки.
@@ -108,14 +108,17 @@ select round(sum(sales),0) from dw.facts f
  <br><br>
   #### Total Profit <br>
 ```sql
-select round(sum(profit),0) from dw.facts```<br>
+select round(sum(profit),0) from dw.facts
+```
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/2.jpg)
+  
  <br><br>
   #### Profit Ratio <br>
 ```sql
 select ROUND(sum(profit)/sum(sales),2) from dw.facts
 ```
-  <br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/3.jpg)
  <br><br>
   
@@ -124,7 +127,7 @@ select ROUND(sum(profit)/sum(sales),2) from dw.facts
 select ROUND(sum(f.profit) / count(o.order_id),0) from dw.facts f
 join dw.dim_orders o on o.order_id =f.order_id 
 ```
-<br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/4.jpg)
  <br><br>
  
@@ -133,7 +136,7 @@ join dw.dim_orders o on o.order_id =f.order_id
 select ROUND(sum(f.sales) / count(c.customer_id),0) from dw.facts f
 join dw.dim_customers c on c.customer_id =f.customer_id
 ``` 
-<br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/5.jpg)
  <br><br>
   #### Avg. Discount <br>
@@ -141,7 +144,7 @@ join dw.dim_customers c on c.customer_id =f.customer_id
 select ROUND(avg(discount),2) from dw.facts
 ```
 
-<br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/6.jpg)
  <br><br>
  
@@ -151,8 +154,9 @@ select EXTRACT(year FROM d.order_date) as year,EXTRACT(month FROM d.order_date) 
 join dw.dim_dates d on d.order_date =f.order_date
 join dw.dim_customers c on c.customer_id =f.customer_id
 group by c.segment,year,month
-order by year DESC,month DESC,segment```
-<br>
+order by year DESC,month DESC,segment
+```
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/7.jpg)
  <br><br>
 
@@ -164,7 +168,7 @@ join dw.dim_products p on p.prod_id =f.prod_id
 group by p.category,year,month
 order by year DESC,month DESC,p.category
 ```
-<br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/8.jpg)
  <br><br>
    
@@ -177,7 +181,7 @@ join dw.dim_products p on p.prod_id =f.prod_id
 group by p.category,d.order_date
 order by d.order_date DESC,p.category
 ```
-  <br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/9.jpg)
  <br><br>
 
@@ -189,7 +193,7 @@ join dw.dim_customers c on c.customer_id =f.customer_id
 group by c.segment
 order by segment
 ```
-  <br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/10.jpg)
  <br><br>
  #### Customer Ranking <br>
@@ -202,7 +206,7 @@ join dw.dim_managers m on m.manager_id =f.manager_id
 group by region
 order by sales DESC
 ```
-  <br>
+
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/11.jpg)
  <br><br>
  
