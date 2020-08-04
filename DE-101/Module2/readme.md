@@ -1,6 +1,6 @@
 # Домашняя работа для модуля 2
 
-## Нормализованная модель данных
+## Dimensional modeling. Star schema
 ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/star_model.jpg)
 
 product_id, к сожалению, [не уникальный](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/nonunique_productid.jpg). 
