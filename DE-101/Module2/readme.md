@@ -124,8 +124,8 @@ select ROUND(sum(profit)/sum(sales),2) from dw.facts
   
   #### Profit per Order <br>
 ```sql
-select ROUND(sum(f.profit) / count(o.order_id),0) from dw.facts f
-join dw.dim_orders o on o.order_id =f.order_id 
+select ROUND(sum(f.profit) / count(distinct f.order_id),0) from dw.facts f
+join dw.dim_orders o on o.order_id =f.order_id  
 ```
 
   ![image](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module2/img/mod1/4.jpg)
