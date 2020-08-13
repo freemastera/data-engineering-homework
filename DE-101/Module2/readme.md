@@ -133,7 +133,7 @@ join dw.dim_orders o on o.order_id =f.order_id
  
    #### Sales per Customer <br>
 ```sql
-select ROUND(sum(f.sales) / count(c.customer_id),0) from dw.facts f
+select ROUND(sum(f.sales) / count(DISTINCT c.customer_id),0) from dw.facts f
 join dw.dim_customers c on c.customer_id =f.customer_id
 ``` 
 
