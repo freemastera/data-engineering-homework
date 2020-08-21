@@ -28,6 +28,9 @@ UPDATE: Обновил дашборд, добавив динамику по ме
 Теперь можно быстро оценить, как KPI менялись по месяцам. В какие месяцы была просадка или наоборот взлет по сравнению с предыдущим годом. 
 К тому же переверстал отчет для лучшего просмора с мобильного.
 [Ссылка на обновленный дашборд](https://public.tableau.com/views/datalearn-tableau-superstore-kpi_year_over_year/KPIDashboard?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
+<br>
+UPDATE 2: Добавил отображение динамики цветом. Если график зеленый, то значит положительный тренд, если красный, то негативный. 
+У avg discount цвет не стал менять, т.к сложно сказать. С одной стороны, чем больше скидка, тем меньше прибыль и это плохо. Но с другой стороны, возможно и продаж было больше из-за скидок.
 
 
 Загрузил [dashboard в формате .twbx на github](https://github.com/freemastera/data-engineering-homework/blob/master/DE-101/Module3/datalearn-tableau-superstore-kpi_year_over_year.twbx)
